@@ -1,0 +1,23 @@
+﻿@page
+@model LibMan1.ImportExportModel
+@{
+    ViewData["Title"] = "ImportExport";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>ImportExport</h1>
+
+@using (Html.BeginForm("Upload", "File", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{   <p>Add a file to import or export.</p>
+    <p>
+        <input type="file" asp-for="JsonFile" />
+    </p>
+    <p>
+        <button asp-page-handler="Import">Import</button>
+    </p>
+    <p>
+        <button asp-page-handler="Export">Export</button>
+    </p>
+}
+
+

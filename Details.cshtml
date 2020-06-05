@@ -1,0 +1,68 @@
+﻿@page
+@model LibMan1.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details of the Book</h1>
+
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.BookTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.BookTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.BookAuthor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.BookAuthor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.BookTranslator)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.BookTranslator)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.BookPublisher)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.BookPublisher)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.BookDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.BookDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.BookCover)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.BookCover)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.BookCategory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.BookCategory)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.ReadingStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.ReadingStatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Books.BookId">Edit</a> 
+    <a asp-page="./Delete" asp-route-id="@Model.Books.BookId">Delete</a> 
+    <a asp-page="./ListBooks">Back to List</a>
+</div>

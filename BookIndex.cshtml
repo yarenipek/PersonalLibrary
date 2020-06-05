@@ -1,0 +1,83 @@
+﻿@page
+@model LibMan1.BookIndexModel
+@{
+    ViewData["Title"] = "BookIndex";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>BookIndex</h1>
+<p>
+    <a asp-page="Create">Create New</a>
+    <h3>Welcome @Model.Username</h3>
+</p>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].BookTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].BookAuthor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].BookTranslator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].BookPublisher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].BookDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].BookCover)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].BookCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].ReadingStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Books)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookAuthor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookTranslator)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookPublisher)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookCover)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookCategory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReadingStatus)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.BookId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.BookId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.BookId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

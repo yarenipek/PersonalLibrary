@@ -1,0 +1,55 @@
+﻿@page
+@model LibMan1.EditUserModel
+
+@{
+    ViewData["Title"] = "EditUser";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>EditUser</h1>
+
+<h4>Users</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Users.FirstName" class="control-label"></label>
+                <input asp-for="Users.FirstName" class="form-control" />
+                <span asp-validation-for="Users.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Users.LastName" class="control-label"></label>
+                <input asp-for="Users.LastName" class="form-control" />
+                <span asp-validation-for="Users.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Users.BirthDate" class="control-label"></label>
+                <input asp-for="Users.BirthDate" class="form-control" />
+                <span asp-validation-for="Users.BirthDate" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Users.Email" />
+            <div class="form-group">
+                <label asp-for="Users.Password" class="control-label"></label>
+                <input asp-for="Users.Password" class="form-control" />
+                <span asp-validation-for="Users.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Users.Photo" class="control-label"></label>
+                <input type="file" asp-for="Image" style="width:100%;background-color: #110e17;color: #ffffff;" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./ListBooks">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
